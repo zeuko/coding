@@ -1,7 +1,7 @@
 package com.caramel.mathandlogic.poisonedbottle;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by patrycja.lisowska on 10.10.2017.
@@ -10,15 +10,15 @@ public class TestStrip {
 
     private int id;
 
-    private List<Integer> positiveDays = new ArrayList<>();
+    private Set<Integer> positiveDays = new HashSet<>();
 
     public TestStrip(int i) {
         this.id = i;
     }
 
     public void addDropOnDay(int day, Bottle bottle) {
-        if (bottle.isPoisoned()) {
-            positiveDays.add(day+7);
+        if (bottle == Bottle.POISONED) {
+            positiveDays.add(day + 7);
         }
     }
 
